@@ -18,9 +18,6 @@ RUN cd /tmp \
 		-DCMAKE_C_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/gcc \
 		-DCMAKE_CXX_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/g++ \
 		-DCMAKE_ASM_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/as \
-		-DPYTHON_INCLUDE_DIR=/opt/rh/rh-python35/root/usr/include/python3.5m \
-		-DPYTHON_LIBRARY=/opt/rh/rh-python35/root/usr/lib64/libpython3.5m.so \
-		-DPYTHON_EXECUTABLE=/opt/rh/rh-python35/root/usr/bin/python \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DLLVM_TARGETS_TO_BUILD="X86" \
 		../llvm \
