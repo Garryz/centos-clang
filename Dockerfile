@@ -19,7 +19,8 @@ RUN cd /tmp \
 		-DCMAKE_CXX_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/g++ \
 		-DCMAKE_ASM_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/as \
 		-DCMAKE_BUILD_TYPE=Release \
-		-DLLVM_TARGETS_TO_BUILD="X86" \
+		-DLLVM_TARGETS_TO_BUILD=X86 \
+		-DBUILD=x86_64-redhat-linux \
 		../llvm \
 	&& make -j4 \
 	&& make install \
