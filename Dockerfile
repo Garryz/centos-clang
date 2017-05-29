@@ -21,9 +21,7 @@ RUN cd /tmp \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DLLVM_TARGETS_TO_BUILD=X86 \
 		../llvm \
-	&& sudo sysctl -w vm.panic_on_oom=1 && sysctl -p \
 	&& make -j4 \
-	&& sudo sysctl -w vm.panic_on_oom=0 && sysctl -p \
 	&& make install \
 	&& yum clean all \
 	&& find /usr/share \
