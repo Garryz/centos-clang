@@ -13,7 +13,7 @@ RUN cd /tmp \
 	&& mkdir build \
 	&& cd build \
 	&& source /opt/rh/devtoolset-3/enable \
-	&& source /opt/rh/rh-python35/enable \
+	&& source /opt/rh/python33/enable \
 	&& cmake -G "Unix Makefiles" \ 
 		-DCMAKE_C_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/gcc \
 		-DCMAKE_CXX_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/g++ \
@@ -33,5 +33,6 @@ RUN cd /tmp \
 	&& rm -rf /sbin/sln \
 	&& rm -rf /usr/{{lib,share}/locale,share/{man,doc,info,cracklib,i18n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
 	&& rm -rf /opt/rh/devtoolset-3/root/usr/{{lib,share}/locale,share/{man,doc,info,cracklib,i18n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
-	&& rm -rf /opt/rh-python35/root/usr/{{lib,share}/locale,share/{man,doc,info,cracklib,i18n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
+	&& rm -rf /opt/python27/root/usr/{{lib,share}/locale,share/{man,doc,info,cracklib,i18n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
+	&& rm -rf /opt/python33/root/usr/{{lib,share}/locale,share/{man,doc,info,cracklib,i18n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
 	&& rm -rf /{root,tmp,var/cache/{ldconfig,yum}}/*
