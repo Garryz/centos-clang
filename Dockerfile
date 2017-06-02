@@ -12,12 +12,8 @@ RUN cd /tmp \
 	&& tar -xf extra.tar -C llvm/tools/clang/tools/extra --strip-components=1 \
 	&& mkdir build \
 	&& cd build \
-	&& source /opt/rh/devtoolset-3/enable \
 	&& source /opt/rh/python33/enable \
 	&& cmake -G "Unix Makefiles" \ 
-		-DCMAKE_C_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/gcc \
-		-DCMAKE_CXX_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/g++ \
-		-DCMAKE_ASM_COMPILER=/opt/rh/devtoolset-3/root/usr/bin/as \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DLLVM_TARGETS_TO_BUILD=X86 \
 		../llvm \
@@ -31,8 +27,7 @@ RUN cd /tmp \
 		-delete \
 	&& rm -rf /etc/ld.so.cache \
 	&& rm -rf /sbin/sln \
-	&& rm -rf /usr/{{lib,share}/locale,share/{man,doc,info,cracklib,i18n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
-	&& rm -rf /opt/rh/devtoolset-3/root/usr/{{lib,share}/locale,share/{man,doc,info,cracklib,i18n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
-	&& rm -rf /opt/python27/root/usr/{{lib,share}/locale,share/{man,doc,info,cracklib,i18n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
-	&& rm -rf /opt/python33/root/usr/{{lib,share}/locale,share/{man,doc,info,cracklib,i18n},{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
+	&& rm -rf /usr/{{lib,share}/locale,share/i18n,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
+	&& rm -rf /opt/rh/python27/root/usr/{{lib,share}/locale,share/i18n,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
+	&& rm -rf /opt/rh/python33/root/usr/{{lib,share}/locale,share/i18n,{lib,lib64}/gconv,bin/localedef,sbin/build-locale-archive} \
 	&& rm -rf /{root,tmp,var/cache/{ldconfig,yum}}/*
